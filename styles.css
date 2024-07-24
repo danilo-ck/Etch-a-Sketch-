@@ -1,16 +1,18 @@
 body {
-    margin: 0px;
+    margin: 5px;
 }
+
 .container {
     display: flex;
     flex-wrap: wrap;
-    height : 100vh ;
+    height : 95vh ;
+    margin: 5px 10px;
 }
 
 .gridElement {
     border-style: solid;
     border: 10px;
-    flex-basis: 6.25%;
+
 }
 
 .pinted {
