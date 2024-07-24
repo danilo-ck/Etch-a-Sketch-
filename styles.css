@@ -12,3 +12,7 @@ body {
     border: 10px;
     flex-basis: 6.25%;
 }
+
+.pinted {
+    background-color: black;
+}
