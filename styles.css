@@ -1,0 +1,14 @@
+body {
+    margin: 0px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height : 100vh ;
+}
+
+.gridElement {
+    border-style: solid;
+    border: 10px;
+    flex-basis: 6.25%;
+}
