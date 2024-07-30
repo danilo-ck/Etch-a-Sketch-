@@ -7,18 +7,29 @@ for(let i = 0; i < 256; i++) {
     container.appendChild(gridElement);
 }
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
 const gridElements = document.querySelectorAll(".gridElement");
+
+let darkness = 0.1;
 
 gridElements.forEach((gridElement) => {
     gridElement.addEventListener("mouseover", () => {
-        gridElement.classList.add("pinted");
+        if(darkness < 1){
+            gridElement.style.backgroundColor = `rgba(${getRandomInt(255)}, ${getRandomInt(255)}, ${getRandomInt(255)}, ${darkness})`;
+            darkness += 0.1;
+        }else{
+            gridElement.style.backgroundColor = `rgb(${getRandomInt(255)}, ${getRandomInt(255)}, ${getRandomInt(255)})`;
+        }
     });
 });
 
 const button = document.querySelector(".sizeButton");
 
 button.addEventListener("click", () => {
-    let newSize = prompt("Please enter new size (up to 100):", "16");
+    let newSize = prompt("Please enter new size (up to 100)", "16");
     if(newSize != null && newSize <= 100){
         let percentaje = 100 / newSize;
 
@@ -37,9 +48,16 @@ button.addEventListener("click", () => {
 
         const gridElements = document.querySelectorAll(".gridElement");
 
+        darkness = 0.1;
+
         gridElements.forEach((gridElement) => {
             gridElement.addEventListener("mouseover", () => {
-                gridElement.classList.add("pinted");
+                if(darkness < 1){
+                    gridElement.style.backgroundColor = `rgba(${getRandomInt(255)}, ${getRandomInt(255)}, ${getRandomInt(255)}, ${darkness})`;
+                    darkness += 0.1;
+                }else{
+                    gridElement.style.backgroundColor = `rgb(${getRandomInt(255)}, ${getRandomInt(255)}, ${getRandomInt(255)})`;
+                }
             });
         });
     }
